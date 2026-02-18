@@ -747,6 +747,7 @@ GameObject:
   - component: {fileID: 182250946}
   - component: {fileID: 182250945}
   - component: {fileID: 182250944}
+  - component: {fileID: 182250947}
   m_Layer: 5
   m_Name: Dropdown
   m_TagString: Untagged
@@ -878,6 +879,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182250942}
   m_CullTransparentMesh: 1
+--- !u!114 &182250947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182250942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f3a86eb50779f4693fd3e2ac29096b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LanguageButton
+  Language: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,6 +997,7 @@ GameObject:
   - component: {fileID: 827637569}
   - component: {fileID: 827637568}
   - component: {fileID: 827637571}
+  - component: {fileID: 827637572}
   m_Layer: 5
   m_Name: ButtonBuy
   m_TagString: Untagged
@@ -1148,6 +1163,20 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &827637572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827637566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1169126d237e6e848b8bfd675fd40d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localizer
+  DataSheet: {fileID: 0}
+  DefaultLanguage: 0
 --- !u!1 &959299075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,6 +1275,7 @@ GameObject:
   - component: {fileID: 1013845784}
   - component: {fileID: 1013845786}
   - component: {fileID: 1013845785}
+  - component: {fileID: 1013845787}
   m_Layer: 5
   m_Name: TextUse
   m_TagString: Untagged
@@ -1372,6 +1402,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1013845783}
   m_CullTransparentMesh: 0
+--- !u!114 &1013845787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013845783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade6183efa1da2c40bd8e90c43ab3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizeText
+  TextKey: GAME_MENU_USE
 --- !u!1 &1031199103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,6 +1462,7 @@ GameObject:
   - component: {fileID: 1056100432}
   - component: {fileID: 1056100434}
   - component: {fileID: 1056100433}
+  - component: {fileID: 1056100435}
   m_Layer: 5
   m_Name: TextBuy
   m_TagString: Untagged
@@ -1545,6 +1589,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056100431}
   m_CullTransparentMesh: 0
+--- !u!114 &1056100435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056100431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade6183efa1da2c40bd8e90c43ab3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizeText
+  TextKey: GAME_MENU_BUY
+--- !u!1 &1120670891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1120670893}
+  - component: {fileID: 1120670892}
+  m_Layer: 0
+  m_Name: Localizer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1120670892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120670891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1169126d237e6e848b8bfd675fd40d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localizer
+  DataSheet: {fileID: 4900000, guid: 64a163bbb2c49e34388e72ba480b627a, type: 3}
+  DefaultLanguage: 2
+--- !u!4 &1120670893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120670891}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.022489998, y: 0.08263, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1182170543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1558,6 +1661,7 @@ GameObject:
   - component: {fileID: 1182170547}
   - component: {fileID: 1182170546}
   - component: {fileID: 1182170545}
+  - component: {fileID: 1182170549}
   m_Layer: 5
   m_Name: ButtonSell
   m_TagString: Untagged
@@ -1723,6 +1827,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182170543}
   m_CullTransparentMesh: 0
+--- !u!114 &1182170549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182170543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1169126d237e6e848b8bfd675fd40d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localizer
+  DataSheet: {fileID: 0}
+  DefaultLanguage: 0
 --- !u!1 &1206030576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2122,6 +2240,7 @@ GameObject:
   - component: {fileID: 1426316715}
   - component: {fileID: 1426316717}
   - component: {fileID: 1426316716}
+  - component: {fileID: 1426316718}
   m_Layer: 5
   m_Name: TextSell
   m_TagString: Untagged
@@ -2248,6 +2367,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426316714}
   m_CullTransparentMesh: 0
+--- !u!114 &1426316718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426316714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade6183efa1da2c40bd8e90c43ab3f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizeText
+  TextKey: GAME_MENU_SELL
 --- !u!1 &1537411338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2725,6 +2857,7 @@ GameObject:
   - component: {fileID: 1778100644}
   - component: {fileID: 1778100643}
   - component: {fileID: 1778100642}
+  - component: {fileID: 1778100646}
   m_Layer: 5
   m_Name: ButtonUse
   m_TagString: Untagged
@@ -2890,6 +3023,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778100640}
   m_CullTransparentMesh: 0
+--- !u!114 &1778100646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778100640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1169126d237e6e848b8bfd675fd40d0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Localizer
+  DataSheet: {fileID: 0}
+  DefaultLanguage: 0
 --- !u!1 &1971635126
 GameObject:
   m_ObjectHideFlags: 0
@@ -3154,5 +3301,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 1120670893}
   - {fileID: 1546767115}
   - {fileID: 44048510}
