@@ -325,7 +325,7 @@ GameObject:
   - component: {fileID: 240091021}
   - component: {fileID: 240091020}
   m_Layer: 5
-  m_Name: Changelang
+  m_Name: ButtonChangeLanguage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,7 +1228,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 29250681a156748498fb0c539e139945, type: 3}
+  m_Sprite: {fileID: 2895245274787422993, guid: 4a335c5a72b8b114fbef1cf43524ae0d,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1253,15 +1254,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396346616}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca6246f8fe6ed1649a68fb5e08cf0e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Localizeimage
-  Language: 0
-  englishBackground: {fileID: 0}
-  catalanBackground: {fileID: 0}
-  spanishBackground: {fileID: 0}
+  LanguageButton: {fileID: 240091020}
+  englishBackground: {fileID: 2895245274787422993, guid: 4a335c5a72b8b114fbef1cf43524ae0d,
+    type: 3}
+  catalanBackground: {fileID: 8890128330746658376, guid: 5f7e99e726883c040af92f872999d870,
+    type: 3}
+  spanishBackground: {fileID: -6287605912883219619, guid: e784f697f601ee64daf54c5856aa422c,
+    type: 3}
 --- !u!1 &1426316714
 GameObject:
   m_ObjectHideFlags: 0

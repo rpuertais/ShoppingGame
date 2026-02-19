@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Localizeimage : MonoBehaviour
 {
-    public Language Language;
+    public LanguageButton LanguageButton;
 
     [Header("Backgrounds")]
     [SerializeField] private Sprite englishBackground;
@@ -12,29 +12,24 @@ public class Localizeimage : MonoBehaviour
 
     private Image imageBackground;
 
-    private void Start()
+    void Start()
     {
         imageBackground = GetComponent<Image>();
     }
-    /*
-       private void Update()
-       {
-           if (Language == Language.English)
-           {
-               ChangeBackground(englishBackground);
-           }
-           else if (Language == Language.Catalan)
-           {
-               ChangeBackground(catalanBackground);
-           }
-           else if (Language == Language.Spanish)
-           {
-               ChangeBackground(spanishBackground);
-           }
-       }
-
-       private void ChangeBackground(Sprite language)
-       {
-           imageBackground = language;
-       }*/
+   
+    void Update()
+    {
+        if (LanguageButton.Language == Language.English)
+        {
+            imageBackground.sprite = englishBackground;
+        }
+        else if (LanguageButton.Language == Language.Catalan)
+        {
+            imageBackground.sprite = catalanBackground;
+        }
+        else if (LanguageButton.Language == Language.Spanish)
+        {
+            imageBackground.sprite = spanishBackground;
+        }
+    }
 }

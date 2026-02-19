@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: db1e1314a564c09498c301a3052eb2a8
+guid: e784f697f601ee64daf54c5856aa422c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8442146571703969407
-    second: BackgroundSpanish_0
+      213: -6287605912883219619
+    second: SpanishBackground_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BackgroundSpanish_0
+      name: SpanishBackground_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1536
-        height: 1024
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f76623c1497882570800000000000000
-      internalID: 8442146571703969407
+      spriteID: d5333f24cbfedb8a0800000000000000
+      internalID: -6287605912883219619
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BackgroundSpanish_0: 8442146571703969407
+      SpanishBackground_0: -6287605912883219619
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
