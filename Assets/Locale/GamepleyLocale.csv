@@ -1,4 +1,4 @@
 Key;English;Catalan;Spanish
-GAME_MENU_BUY;Buy;Comprar;Comprar
-GAME_MENU_SELL;Sell;Vendre;Vender
-GAME_MENU_USE;Use;Utilitzar;Usar
+GAME_BUY;Buy;Comprar;Comprar
+GAME_SELL;Sell;Vendre;Vender
+GAME_USE;Use;Utilitzar;Usar

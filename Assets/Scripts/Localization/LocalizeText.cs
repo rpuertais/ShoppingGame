@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class LocalizeText : MonoBehaviour
 {
     public string TextKey;
-    private Text textValue;
+    private TextMeshProUGUI textValue;
 
     void Start()
     {
-        textValue = GetComponent<Text>();
+        textValue = GetComponent<TextMeshProUGUI>();
         textValue.text = Localizer.GetText(TextKey);
     }
 
