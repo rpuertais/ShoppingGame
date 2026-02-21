@@ -1,0 +1,95 @@
+{
+    "version": 1,
+    "name": "BasicInput",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "09f19d17-80e9-4cc5-948c-aa360b39e22c",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "ab040050-8d9e-4893-b16a-ffeedcec2d1a",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Enter",
+                    "type": "Button",
+                    "id": "0a222f64-e88f-4025-a4ab-1a813b4d77f9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "4ea49c2d-37fd-4b16-9790-7cdb8cb46b39",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";keyboard",
+                    "action": "Enter",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "94ba059f-f4d3-4a75-824d-d154922fff8b",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";keyboard",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "859790c2-e08b-4e07-b02e-cf592191654f",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "3aab717e-ada1-46e7-8e55-d0b429b14d7b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f465dfa5-bda3-4532-9fd2-c86815b15335",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "keyboard",
+            "bindingGroup": "keyboard",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
