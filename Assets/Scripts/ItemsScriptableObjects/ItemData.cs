@@ -7,7 +7,7 @@ public class ItemData : ScriptableObject
     public string Name;
     public string Description;
 
-
+    public bool IsStackable;
     public bool IsConsumable;
     [Header("If consumable is true")]
     public int LifeRestore;
