@@ -18,6 +18,6 @@ MonoBehaviour:
   IsStackable: 1
   IsConsumable: 1
   LifeRestore: 10
-  Cost: 25
-  Sell: 25
+  Cost: 20
+  Sell: 20
   Image: {fileID: -1660761858345613354, guid: fb4c5cbdf711bd44086b64d28c3e758b, type: 3}
