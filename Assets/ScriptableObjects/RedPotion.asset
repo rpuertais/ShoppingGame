@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e372209a0e06854185c1f378555d7f4, type: 3}
-  m_Name: Potion 1
+  m_Name: RedPotion
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: Small potion
-  Description: 
+  NameKey: ITEM_REDPOTION_NAME
+  DescriptionKey: ITEM_REDPOTION_DESC
   Type: 1
   IsStackable: 1
   IsConsumable: 1
   LifeRestore: 25
-  Cost: 25
+  Buy: 1
   Sell: 25
-  Image: {fileID: -6788786441961382123, guid: 2ca5f88e2c6e29844a821bb782693b54, type: 3}
+  Image: {fileID: -6788786441961382123, guid: 1c103005dfbaa434085b36d23bfa7bd0, type: 3}

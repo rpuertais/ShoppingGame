@@ -19,13 +19,12 @@ public class ShopSystem : MonoBehaviour
         ItemData item = selection.SelectedItem;
         if (item == null) return;
 
-        if (!playerWallet.CanAfford(item.Cost))
+        if (!playerWallet.CanAfford(item.Buy))
         {
-            Debug.Log("Not enough coins!");
             return;
         }
 
-        if (playerWallet.Spend(item.Cost))
+        if (playerWallet.Spend(item.Buy))
         {
             shopInventory.RemoveItem(item);
             playerInventory.AddItem(item);
@@ -58,7 +57,6 @@ public class ShopSystem : MonoBehaviour
 
         if (!item.IsConsumable)
         {
-            Debug.Log("Item is not consumable!");
             return;
         }
 

@@ -16,6 +16,15 @@ public class ItemUI : MonoBehaviour
 
     public Image Image;
 
+    private void OnEnable() 
+    { 
+        Localizer.OnLanguageChange += RefreshLanguage; 
+    }
+    private void OnDisable() 
+    { 
+        Localizer.OnLanguageChange -= RefreshLanguage; 
+    }
+
     private void Start()
     {
         if (Item != null) SetCard(Item);
@@ -24,21 +33,40 @@ public class ItemUI : MonoBehaviour
 
     public void SetCard(ItemData item)
     {
-        Item = item;
+        Item = item; 
+        RefreshLanguage();
+    }
 
-        if (TextName != null) TextName.text = item.Name;
-        if (TextDescription != null) TextDescription.text = item.Description;
+    private void RefreshLanguage()
+    {
+        if (Item == null)
+        {
+            Clear();
+            return;
+        }
 
-        if (TextType != null) TextType.text = $"Type: {item.Type}";
-        if (TextCost != null) TextCost.text = $"Cost: {item.Cost}";
-        if (TextSell != null) TextSell.text = $"Sell: {item.Sell}";
+        if (TextName != null)
+            TextName.text = Localizer.GetText(Item.NameKey);
+
+        if (TextDescription != null)
+            TextDescription.text = Localizer.GetText(Item.DescriptionKey);
+
+        if (TextType != null)
+            TextType.text = $"{Localizer.GetText("GAME_TYPE")}: {Item.Type}";
+
+        if (TextCost != null)
+            TextCost.text = $"{Localizer.GetText("GAME_BUY")}: {Item.Buy}";
+
+        if (TextSell != null)
+            TextSell.text = $"{Localizer.GetText("GAME_SELL")}: {Item.Sell}";
 
         if (TextLifeRestore != null)
         {
-            if (item.IsConsumable)
+            if (Item.IsConsumable)
             {
                 TextLifeRestore.gameObject.SetActive(true);
-                TextLifeRestore.text = $"Life Restore: {item.LifeRestore}";
+                TextLifeRestore.text =
+                    $"{Localizer.GetText("GAME_LIFE_RESTORE")}: {Item.LifeRestore}";
             }
             else
             {
@@ -46,9 +74,9 @@ public class ItemUI : MonoBehaviour
             }
         }
 
-        if (Image != null) Image.sprite = item.Image;
+        if (Image != null)
+            Image.sprite = Item.Image;
     }
-
     public void Clear()
     {
         Item = null;

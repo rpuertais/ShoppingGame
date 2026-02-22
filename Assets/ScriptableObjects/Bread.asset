@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e372209a0e06854185c1f378555d7f4, type: 3}
-  m_Name: Cheese
+  m_Name: Bread
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: Cheese
-  Description: 
+  NameKey: ITEM_BREAD_NAME
+  DescriptionKey: ITEM_BREAD_DESC
+  Type: 0
   IsStackable: 1
-  IsConsumable: 0
-  LifeRestore: 0
-  Cost: 20
+  IsConsumable: 1
+  LifeRestore: 10
+  Buy: 1
   Sell: 20
-  Image: {fileID: 6582011127417039112, guid: cb9cdfb1dcb10de44b542fa05e7e21c2, type: 3}
+  Image: {fileID: -1660761858345613354, guid: ac96a15a5c6a9e746a216baeada8d4aa, type: 3}

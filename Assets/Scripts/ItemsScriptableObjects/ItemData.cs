@@ -10,9 +10,11 @@ public enum ItemType
 [CreateAssetMenu(fileName = "ItemData", menuName = "Items/ItemData")]
 public class ItemData : ScriptableObject
 {
+    [Header("Localization Keys")]
+    public string NameKey;
+    public string DescriptionKey;
+
     [Header("Details")]
-    public string Name;
-    [TextArea] public string Description;
     public ItemType Type;
 
     [Header("Stack / Use")]
@@ -23,7 +25,7 @@ public class ItemData : ScriptableObject
     public int LifeRestore = 0;
 
     [Header("Economy")]
-    public int Cost = 1;
+    public int Buy = 1;
     public int Sell = 1;
 
     [Header("Graphics")]

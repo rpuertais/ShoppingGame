@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 15ab527da2697d6448dd63369a42bf56
+guid: 0f9e58978a807dc4d91369c246dfd0be
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8306414610740238925
-    second: Red Potion 3_0
+      213: -7856493677412862020
+    second: Bow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Red Potion 3_0
+      name: Bow_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 31
-        height: 32
+        width: 30
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4a59464410564370800000000000000
-      internalID: 8306414610740238925
+      spriteID: cb734b930a028f290800000000000000
+      internalID: -7856493677412862020
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Red Potion 3_0: 8306414610740238925
+      Bow_0: -7856493677412862020
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
