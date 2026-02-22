@@ -19,7 +19,7 @@ public class ItemSlotUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public void Initialize(ItemSlot slot, InventoryUI inventory)
     {
-        Image.sprite = slot.Item.ImageUI;
+        Image.sprite = slot.Item.Image;
         Image.SetNativeSize();
 
         AmountText.text = slot.Amount.ToString();
