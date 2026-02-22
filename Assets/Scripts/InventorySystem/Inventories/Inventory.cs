@@ -36,7 +36,7 @@ public class Inventory : ScriptableObject
             slot = new ItemSlot(item);
             Slots.Add(slot);
 
-            // si amount > 1, afegim la resta
+            
             for (int i = 1; i < amount; i++) slot.AddOne();
         }
 
