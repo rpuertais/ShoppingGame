@@ -63,4 +63,5 @@ public class Inventory : ScriptableObject
     {
         return Slots[i];
     }
+
 }

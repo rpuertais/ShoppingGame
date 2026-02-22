@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e372209a0e06854185c1f378555d7f4, type: 3}
-  m_Name: Weapon
+  m_Name: Bread
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: 
+  Name: Bread
   Description: 
+  IsStackable: 1
   IsConsumable: 0
   LifeRestore: 0
-  Cost: 0
-  Sell: 0
-  Image: {fileID: 0}
+  Cost: 25
+  Sell: 25
+  Image: {fileID: -1660761858345613354, guid: fb4c5cbdf711bd44086b64d28c3e758b, type: 3}

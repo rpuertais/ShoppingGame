@@ -19,3 +19,8 @@ public class ItemData : ScriptableObject
     [Header("Image")]
     public Sprite Image;
 }
+public interface IConsume
+{
+    void Use(ConsumableItem item);
+}
+
