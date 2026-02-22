@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   Name: Small potion
   Description: 
-  IsStackable: 0
+  Type: 1
+  IsStackable: 1
   IsConsumable: 1
   LifeRestore: 25
   Cost: 25

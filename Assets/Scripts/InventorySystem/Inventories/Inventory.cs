@@ -1,30 +1,43 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 [CreateAssetMenu(fileName = "Inventory", menuName = "Items/Inventory")]
 public class Inventory : ScriptableObject
 {
-    [SerializeField]
-    List<ItemSlot> Slots;
-    public int Length => Slots.Count;
+    [SerializeField] private List<ItemSlot> Slots = new List<ItemSlot>();
 
+    public int Length => Slots.Count;
     public Action OnInventoryChange;
+
+    public void Clear()
+    {
+        Slots.Clear();
+        OnInventoryChange?.Invoke();
+    }
 
     public void AddItem(ItemData item)
     {
-        if (Slots == null) Slots = new List<ItemSlot>();
+        AddItem(item, 1);
+    }
+
+    public void AddItem(ItemData item, int amount)
+    {
+        if (item == null || amount <= 0) return;
 
         var slot = GetSlot(item);
 
-        if ((slot != null) && (item.IsStackable))
+        if (slot != null && item.IsStackable)
         {
-            slot.AddOne();
+            for (int i = 0; i < amount; i++) slot.AddOne();
         }
         else
         {
             slot = new ItemSlot(item);
             Slots.Add(slot);
+
+            // si amount > 1, afegim la resta
+            for (int i = 1; i < amount; i++) slot.AddOne();
         }
 
         OnInventoryChange?.Invoke();
@@ -32,21 +45,16 @@ public class Inventory : ScriptableObject
 
     public void RemoveItem(ItemData item)
     {
-        if (Slots == null) return;
+        if (item == null) return;
 
         var slot = GetSlot(item);
 
         if (slot != null)
         {
             slot.RemoveOne();
-            if (slot.IsEmpty()) RemoveSlot(slot);
+            if (slot.IsEmpty()) Slots.Remove(slot);
+            OnInventoryChange?.Invoke();
         }
-
-        OnInventoryChange?.Invoke();
-    }
-    private void RemoveSlot(ItemSlot slot)
-    {
-        Slots.Remove(slot);
     }
 
     private ItemSlot GetSlot(ItemData item)
@@ -55,7 +63,6 @@ public class Inventory : ScriptableObject
         {
             if (Slots[i].HasItem(item)) return Slots[i];
         }
-
         return null;
     }
 
@@ -63,5 +70,4 @@ public class Inventory : ScriptableObject
     {
         return Slots[i];
     }
-
 }

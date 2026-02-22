@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   Name: Axe
   Description: 
+  Type: 2
   IsStackable: 0
   IsConsumable: 0
   LifeRestore: 0

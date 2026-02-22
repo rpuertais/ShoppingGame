@@ -6,65 +6,62 @@ public class InventoryUI : MonoBehaviour
     public Inventory Inventory;
     public ItemSlotUI SlotPrefab;
 
-    List<GameObject> itemSlotList;
+    [Header("Who owns this inventory UI?")]
+    public InventoryOwner Owner = InventoryOwner.Player;
 
-    void Start()
-    {
-        FillInventoryUI(Inventory);
-    }
+    [Header("Selection")]
+    public SelectionManager selectionManager;
+
+    private List<GameObject> itemSlotList = new List<GameObject>();
 
     private void OnEnable()
     {
-        Inventory.OnInventoryChange += UpdateInventoryUI;
+        if (Inventory != null)
+            Inventory.OnInventoryChange += UpdateInventoryUI;
     }
 
     private void OnDisable()
     {
-        Inventory.OnInventoryChange -= UpdateInventoryUI;
+        if (Inventory != null)
+            Inventory.OnInventoryChange -= UpdateInventoryUI;
+    }
+
+    private void Start()
+    {
+        UpdateInventoryUI();
+    }
+
+    public void SelectItem(ItemData item)
+    {
+        if (selectionManager == null) return;
+        selectionManager.Select(item, Owner);
     }
 
     private void UpdateInventoryUI()
     {
-        // Regenerate full inventory on changes
+        if (Inventory == null || SlotPrefab == null) return;
+
         ClearInventoryUI();
-        FillInventoryUI(Inventory);
+
+        for (int i = 0; i < Inventory.Length; i++)
+        {
+            itemSlotList.Add(AddSlot(Inventory.GetSlot(i)));
+        }
     }
 
     private void ClearInventoryUI()
     {
-        foreach (var item in itemSlotList)
+        for (int i = 0; i < itemSlotList.Count; i++)
         {
-            if (item) Destroy(item);
+            if (itemSlotList[i] != null) Destroy(itemSlotList[i]);
         }
-
         itemSlotList.Clear();
-    }
-
-    private void FillInventoryUI(Inventory inventory)
-    {
-        // Lazy initialization for objects list
-        if (itemSlotList == null) itemSlotList = new List<GameObject>();
-
-        if (itemSlotList.Count > 0) ClearInventoryUI();
-
-        for (int i = 0; i < inventory.Length; i++)
-        {
-            itemSlotList.Add(AddSlot(inventory.GetSlot(i)));
-        }
     }
 
     private GameObject AddSlot(ItemSlot itemSlot)
     {
-        // Add a new visual slot UI in inventory UI, using provided prefab
-        var element = GameObject.Instantiate(SlotPrefab, Vector3.zero, Quaternion.identity, transform);
-
+        var element = Instantiate(SlotPrefab, Vector3.zero, Quaternion.identity, transform);
         element.Initialize(itemSlot, this);
-
         return element.gameObject;
-    }
-
-    public void UseItem(ItemData item)
-    {
-        Inventory.RemoveItem(item);
     }
 }
