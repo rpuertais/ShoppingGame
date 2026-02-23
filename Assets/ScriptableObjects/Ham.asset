@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e372209a0e06854185c1f378555d7f4, type: 3}
   m_Name: Ham
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  NameKey: 
-  DescriptionKey: 
+  NameKey: ITEM_HAM_NAME
+  DescriptionKey: ITEM_HAM_DESC
   Type: 0
-  IsStackable: 0
-  IsConsumable: 0
+  IsStackable: 1
+  IsConsumable: 1
   LifeRestore: 0
-  Buy: 1
+  Buy: 45
   Sell: 50
   Image: {fileID: 21300000, guid: cb4270eb0afc60945a5c647eb35d9194, type: 3}

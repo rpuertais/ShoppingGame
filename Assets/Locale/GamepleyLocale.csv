@@ -8,7 +8,21 @@ GAME_TYPE_FOOD;Food;Menjar;Comida
 GAME_TYPE_POTION;Potion;Poció;Poción
 GAME_TYPE_WEPAPON;Weapon;Arma;Arma
 GAME_LIFE_RESTORE;Life Restore;Restaura Vida;Restaura Vida
+ITEM_AXE_NAME;Axe;Destral;Hacha
+ITEM_AXE_DESC;Old Blunt Axe;Destral Vella Desfilada;Hacha Vieja Desfilada
+ITEM_BLUEPOTION_NAME;Blue Potion;Poció Blava;Poción Azul
+ITEM_BLUEPOTION_DESC;Heals 50;Cura 50;Cura 50
+ITEM_BOW_NAME;Bow;Arc;Arco
+ITEM_BOW_DESC;Wooden Bow;Arc de Fusta;Arco de Madera
 ITEM_BREAD_NAME;Bread;Pa;Pan
-ITEM_BREAD_DESC;Piece of bread;Tros de pa;Trozo de pan
+ITEM_BREAD_DESC;Piece of Bread;Tros de Pa;Trozo de Pan
+ITEM_CHEESE_NAME;Cheese;Formatge;Queso
+ITEM_CHEESE_DESC;Smelly Cheese;Formatge Pudent;Queso Maloliente
+ITEM_GREENPOTION_NAME;Green Potion;Poció Verda;Poción Verde
+ITEM_GREENPOTION_DESC;Heals 75; Cura 75;Cura 75
+ITEM_HAM_NAME;Ham;Pernil;Jamón
+ITEM_HAM_DESC;Juicy Ham;Pernil Sucós;Jamón Jugoso
 ITEM_REDPOTION_NAME;Red Potion;Poció Vermella;Poción Roja
 ITEM_REDPOTION_DESC;Heals 25;Cura 25;Cura 25
+ITEM_SWORD_NAME;Sword;Espasa;Espada
+ITEM_SWORD_DESC;Old Steel Sword;Espasa Antiga d'Acer;Espada Antigua de Acero

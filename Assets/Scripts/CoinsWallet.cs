@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class CoinsWallet : MonoBehaviour
 {
-    public int coins = 100;
-    public TextMeshProUGUI coinsText;
+    [Header("PlayerWallet")]
+    public int PlayerCoins = 100;
+    public TextMeshProUGUI PlayerCoinsText;
+    [Header("ShopWallet")]
+    public int ShopCoins = 100;
+    public TextMeshProUGUI ShopCoinsText;
 
     private void Start()
     {
@@ -13,29 +17,34 @@ public class CoinsWallet : MonoBehaviour
 
     public bool CanAfford(int amount)
     {
-        return coins >= amount;
+        return PlayerCoins >= amount;
     }
 
     public void Add(int amount)
     {
         if (amount <= 0) return;
-        coins += amount;
+        PlayerCoins += amount;
+        ShopCoins -= amount;
         RefreshUI();
     }
 
     public bool Spend(int amount)
     {
         if (amount <= 0) return true;
-        if (coins < amount) return false;
+        if (PlayerCoins < amount) return false;
 
-        coins -= amount;
+        PlayerCoins -= amount;
+        ShopCoins += amount;
         RefreshUI();
         return true;
     }
 
     public void RefreshUI()
     {
-        if (coinsText != null)
-            coinsText.text = coins.ToString();
+        if (PlayerCoinsText != null && ShopCoinsText != null)
+        {
+            PlayerCoinsText.text = PlayerCoins.ToString();
+            ShopCoinsText.text = ShopCoins.ToString();
+        }
     }
 }

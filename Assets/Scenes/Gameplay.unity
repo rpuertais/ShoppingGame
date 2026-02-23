@@ -245,12 +245,26 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 90ec6691ba1e52b4db06f67468e7cf87, type: 2}
     amount: 2
   - item: {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
-    amount: 3
+    amount: 1
   shopStartItems:
+  - item: {fileID: 11400000, guid: 1239866f4ae598d43a0109cc45141a87, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: b0ca555b30f67cf4d9b8352cb3dd9b79, type: 2}
+    amount: 1
   - item: {fileID: 11400000, guid: 90ec6691ba1e52b4db06f67468e7cf87, type: 2}
+    amount: 3
+  - item: {fileID: 11400000, guid: 0d51c53234f96ff479bade58ca93b2cf, type: 2}
+    amount: 5
+  - item: {fileID: 11400000, guid: 06b50024f6273684d98559c1df3e6ebb, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: a422dcde80c272345b73426721077334, type: 2}
+    amount: 6
+  - item: {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
+    amount: 1
+  - item: {fileID: 11400000, guid: efe0b827949baaa45b8b886176496354, type: 2}
     amount: 1
   - item: {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
-    amount: 4
+    amount: 1
   clearInventoriesOnStart: 1
 --- !u!4 &47023147
 Transform:
@@ -1359,6 +1373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 487819565}
   - component: {fileID: 487819564}
+  - component: {fileID: 487819567}
   m_Layer: 0
   m_Name: PlayerStats
   m_TagString: Untagged
@@ -1395,6 +1410,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &487819567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487819563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466f968579d0fa24d9c4eabf6cfeb787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CoinsWallet
+  PlayerCoins: 100
+  PlayerCoinsText: {fileID: 1537411341}
+  ShopCoins: 100
+  ShopCoinsText: {fileID: 2127330163}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,7 +1686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopSystem
   playerInventory: {fileID: 11400000, guid: 385aa24aa079f004eb4d5817a369bc3e, type: 2}
   shopInventory: {fileID: 11400000, guid: 74c4406b156001546b5a230736750883, type: 2}
-  playerWallet: {fileID: 827497534}
+  playerWallet: {fileID: 487819567}
   selection: {fileID: 1869274314}
   playerStats: {fileID: 487819564}
 --- !u!4 &751123816
@@ -1684,7 +1715,6 @@ GameObject:
   - component: {fileID: 827497533}
   - component: {fileID: 827497532}
   - component: {fileID: 827497531}
-  - component: {fileID: 827497534}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1750,20 +1780,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &827497534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 827497530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 466f968579d0fa24d9c4eabf6cfeb787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CoinsWallet
-  coins: 100
-  coinsText: {fileID: 1537411341}
 --- !u!1 &827637566
 GameObject:
   m_ObjectHideFlags: 0
