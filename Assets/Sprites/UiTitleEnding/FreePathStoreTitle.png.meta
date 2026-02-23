@@ -1,0 +1,455 @@
+fileFormatVersion: 2
+guid: 4cc5dde42b29c9e4a80038c41196a409
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3362134145655586629
+    second: FreePathStoreTitle_0
+  - first:
+      213: -8626135275253012033
+    second: FreePathStoreTitle_1
+  - first:
+      213: -5234418188649966220
+    second: FreePathStoreTitle_2
+  - first:
+      213: 7605819453606732810
+    second: FreePathStoreTitle_3
+  - first:
+      213: 8424374647453100013
+    second: FreePathStoreTitle_4
+  - first:
+      213: -7012122362530496220
+    second: FreePathStoreTitle_5
+  - first:
+      213: 6492567784853207571
+    second: FreePathStoreTitle_6
+  - first:
+      213: -3523167413878715153
+    second: FreePathStoreTitle_7
+  - first:
+      213: 2071450977250707211
+    second: FreePathStoreTitle_8
+  - first:
+      213: 7262760279951880409
+    second: FreePathStoreTitle_9
+  - first:
+      213: 2237845777618234373
+    second: FreePathStoreTitle_10
+  - first:
+      213: -4173683620379345152
+    second: FreePathStoreTitle_11
+  - first:
+      213: 7466402586848694402
+    second: FreePathStoreTitle_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FreePathStoreTitle_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 109
+        width: 43
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0ccf0decc4751d0800000000000000
+      internalID: -3362134145655586629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 109
+        width: 56
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9e31e9bafc94880800000000000000
+      internalID: -8626135275253012033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_2
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 110
+        width: 45
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475dcabf36c9b57b0800000000000000
+      internalID: -5234418188649966220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_3
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 110
+        width: 46
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a042cf5ee7c4d8960800000000000000
+      internalID: 7605819453606732810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_4
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 110
+        width: 54
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de7af3c8b1469e470800000000000000
+      internalID: 8424374647453100013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_5
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 110
+        width: 66
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4210cc3fcdfefae90800000000000000
+      internalID: -7012122362530496220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_6
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 109
+        width: 54
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31af150500c3a1a50800000000000000
+      internalID: 6492567784853207571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_7
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 110
+        width: 59
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fec078357e13b1fc0800000000000000
+      internalID: -3523167413878715153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_8
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 17
+        width: 52
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b070aa450b54fbc10800000000000000
+      internalID: 2071450977250707211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_9
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 17
+        width: 54
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0395faef18ac460800000000000000
+      internalID: 7262760279951880409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_10
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 17
+        width: 70
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50cea0dc0ec6e0f10800000000000000
+      internalID: 2237845777618234373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_11
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 17
+        width: 57
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f3c624cd81416c0800000000000000
+      internalID: -4173683620379345152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FreePathStoreTitle_12
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 17
+        width: 46
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2809c23189dfd9760800000000000000
+      internalID: 7466402586848694402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      FreePathStoreTitle_0: -3362134145655586629
+      FreePathStoreTitle_1: -8626135275253012033
+      FreePathStoreTitle_10: 2237845777618234373
+      FreePathStoreTitle_11: -4173683620379345152
+      FreePathStoreTitle_12: 7466402586848694402
+      FreePathStoreTitle_2: -5234418188649966220
+      FreePathStoreTitle_3: 7605819453606732810
+      FreePathStoreTitle_4: 8424374647453100013
+      FreePathStoreTitle_5: -7012122362530496220
+      FreePathStoreTitle_6: 6492567784853207571
+      FreePathStoreTitle_7: -3523167413878715153
+      FreePathStoreTitle_8: 2071450977250707211
+      FreePathStoreTitle_9: 7262760279951880409
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
