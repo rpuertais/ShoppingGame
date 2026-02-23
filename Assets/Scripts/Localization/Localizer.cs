@@ -37,7 +37,7 @@ public class Localizer : MonoBehaviour
 
     void LoadLanguageSheet()
     {
-        string[] lines = DataSheet.text.Split('\n');
+        string[] lines = DataSheet.text.Split("\r\n");
 
         for (int i = 1; i < lines.Length; i++)
         {
