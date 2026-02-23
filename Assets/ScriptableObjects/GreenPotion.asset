@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e372209a0e06854185c1f378555d7f4, type: 3}
   m_Name: GreenPotion
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: Big Potion
-  Description: 
-  Type: 0
+  NameKey: 
+  DescriptionKey: 
+  Type: 1
   IsStackable: 0
   IsConsumable: 1
   LifeRestore: 75
-  Cost: 75
+  Buy: 1
   Sell: 75
-  Image: {fileID: 6798350371749318859, guid: 1e91466774115c340a5855e8f4e0c921, type: 3}
+  Image: {fileID: 21300000, guid: 1e91466774115c340a5855e8f4e0c921, type: 3}

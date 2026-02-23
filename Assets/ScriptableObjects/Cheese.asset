@@ -20,4 +20,4 @@ MonoBehaviour:
   LifeRestore: 0
   Buy: 1
   Sell: 20
-  Image: {fileID: 6582011127417039112, guid: 743d440be08974b4d84004f3d53414e8, type: 3}
+  Image: {fileID: 21300000, guid: 743d440be08974b4d84004f3d53414e8, type: 3}

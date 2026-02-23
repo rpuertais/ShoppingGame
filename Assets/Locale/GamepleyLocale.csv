@@ -4,6 +4,9 @@ GAME_SELL;Sell;Vendre;Vender
 GAME_USE;Use;Utilitzar;Usar
 GAME_DAMAGE;Damage;Dany;Daño
 GAME_TYPE;Type;Tipus;Tipo
+GAME_TYPE_FOOD;Food;Menjar;Comida
+GAME_TYPE_POTION;Potion;Poció;Poción
+GAME_TYPE_WEPAPON;Weapon;Arma;Arma
 GAME_LIFE_RESTORE;Life Restore;Restaura Vida;Restaura Vida
 ITEM_BREAD_NAME;Bread;Pa;Pan
 ITEM_BREAD_DESC;Piece of bread;Tros de pa;Trozo de pan

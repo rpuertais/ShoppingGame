@@ -15,9 +15,9 @@ MonoBehaviour:
   NameKey: ITEM_REDPOTION_NAME
   DescriptionKey: ITEM_REDPOTION_DESC
   Type: 1
-  IsStackable: 1
+  IsStackable: 0
   IsConsumable: 1
   LifeRestore: 25
   Buy: 1
   Sell: 25
-  Image: {fileID: -6788786441961382123, guid: 1c103005dfbaa434085b36d23bfa7bd0, type: 3}
+  Image: {fileID: 21300000, guid: 1c103005dfbaa434085b36d23bfa7bd0, type: 3}

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 public class ItemUI : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class ItemUI : MonoBehaviour
             TextDescription.text = Localizer.GetText(Item.DescriptionKey);
 
         if (TextType != null)
-            TextType.text = $"{Localizer.GetText("GAME_TYPE")}: {Item.Type}";
+            TextType.text = $"{Localizer.GetText("GAME_TYPE")}: {Localizer.GetText(Item.Type.ToString())}";
 
         if (TextCost != null)
             TextCost.text = $"{Localizer.GetText("GAME_BUY")}: {Item.Buy}";

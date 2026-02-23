@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e372209a0e06854185c1f378555d7f4, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: Bow
-  Description: 
+  NameKey: 
+  DescriptionKey: 
+  Type: 2
   IsStackable: 0
   IsConsumable: 0
   LifeRestore: 0
-  Cost: 25
+  Buy: 1
   Sell: 25
-  Image: {fileID: -7856493677412862020, guid: 0f9e58978a807dc4d91369c246dfd0be, type: 3}
+  Image: {fileID: 21300000, guid: 0f9e58978a807dc4d91369c246dfd0be, type: 3}

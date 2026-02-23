@@ -2,9 +2,9 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Food,
-    Potion,
-    Weapon
+    GAME_TYPE_FOOD,
+    GAME_TYPE_POTION,
+    GAME_TYPE_WEPAPON
 }
 
 [CreateAssetMenu(fileName = "ItemData", menuName = "Items/ItemData")]

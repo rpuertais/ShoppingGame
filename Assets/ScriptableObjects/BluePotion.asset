@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e372209a0e06854185c1f378555d7f4, type: 3}
   m_Name: BluePotion
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: Medium Potion
-  Description: 
-  Type: 0
+  NameKey: 
+  DescriptionKey: 
+  Type: 1
   IsStackable: 0
   IsConsumable: 1
   LifeRestore: 50
-  Cost: 50
+  Buy: 1
   Sell: 50
-  Image: {fileID: 5177666693930723060, guid: fd35e729b9496a145adc2c675ce8a472, type: 3}
+  Image: {fileID: 21300000, guid: fd35e729b9496a145adc2c675ce8a472, type: 3}
