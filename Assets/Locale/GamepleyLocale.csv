@@ -1,5 +1,14 @@
-Key;English;Catalan;Spanish
+锘縆ey;English;Catalan;Spanish
 GAME_BUY;Buy;Comprar;Comprar
 GAME_SELL;Sell;Vendre;Vender
 GAME_USE;Use;Utilitzar;Usar
-GAME_DAMAGE;Damage;Dany;Da駉
+GAME_DAMAGE;Damage;Dany;Da帽o
+GAME_TYPE;Type;Tipus;Tipo
+GAME_TYPE_FOOD;Food;Menjar;Comida
+GAME_TYPE_POTION;Potion;Poci贸;Poci贸n
+GAME_TYPE_WEPAPON;Weapon;Arma;Arma
+GAME_LIFE_RESTORE;Life Restore;Restaura Vida;Restaura Vida
+ITEM_BREAD_NAME;Bread;Pa;Pan
+ITEM_BREAD_DESC;Piece of bread;Tros de pa;Trozo de pan
+ITEM_REDPOTION_NAME;Red Potion;Poci贸 Vermella;Poci贸n Roja
+ITEM_REDPOTION_DESC;Heals 25;Cura 25;Cura 25

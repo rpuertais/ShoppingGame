@@ -1,21 +1,33 @@
 using UnityEngine;
 
+public enum ItemType
+{
+    GAME_TYPE_FOOD,
+    GAME_TYPE_POTION,
+    GAME_TYPE_WEPAPON
+}
+
 [CreateAssetMenu(fileName = "ItemData", menuName = "Items/ItemData")]
 public class ItemData : ScriptableObject
 {
+    [Header("Localization Keys")]
+    public string NameKey;
+    public string DescriptionKey;
+
     [Header("Details")]
-    public string Name;
-    public string Description;
+    public ItemType Type;
 
+    [Header("Stack / Use")]
+    public bool IsStackable = true;
+    public bool IsConsumable = false;
 
-    public bool IsConsumable;
-    [Header("If consumable is true")]
-    public int LifeRestore;
+    [Header("Consumable")]
+    public int LifeRestore = 0;
 
     [Header("Economy")]
-    public int Cost;
-    public int Sell;
+    public int Buy = 1;
+    public int Sell = 1;
 
-    [Header("Image")]
+    [Header("Graphics")]
     public Sprite Image;
 }
