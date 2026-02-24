@@ -42,8 +42,10 @@ public class InventoryInitializer : MonoBehaviour
     {
         for (int i = 0; i < list.Count; i++)
         {
-            if (list[i].item == null) continue;
-            inv.AddItem(list[i].item, list[i].amount);
+            if (list[i].item != null)
+            {
+                inv.AddItem(list[i].item, list[i].amount);
+            }
         }
     }
 }

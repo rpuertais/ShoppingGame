@@ -6,13 +6,17 @@ public class InventoryUI : MonoBehaviour
     public Inventory Inventory;
     public ItemSlotUI SlotPrefab;
 
-    [Header("Who owns this inventory UI?")]
+    [Header("Grid")]
+    public int Capacity = 20;
+
+    [Header("Owner")]
     public InventoryOwner Owner = InventoryOwner.Player;
 
     [Header("Selection")]
     public SelectionManager selectionManager;
 
-    private List<GameObject> itemSlotList = new List<GameObject>();
+    private List<ItemSlotUI> slotList = new List<ItemSlotUI>();
+    private ItemSlotUI selectedSlot;
 
     private void OnEnable()
     {
@@ -31,37 +35,49 @@ public class InventoryUI : MonoBehaviour
         UpdateInventoryUI();
     }
 
-    public void SelectItem(ItemData item)
+    public void SelectSlot(ItemSlotUI slotUI, ItemData item)
     {
-        if (selectionManager == null) return;
-        selectionManager.Select(item, Owner);
+        ClearSelectionVisual();
+
+        selectedSlot = slotUI;
+        selectedSlot.SetSelected(true);
+
+        if (selectionManager != null)
+            selectionManager.Select(item, Owner);
+    }
+
+    private void ClearSelectionVisual()
+    {
+        for (int i = 0; i < slotList.Count; i++)
+            slotList[i].SetSelected(false);
     }
 
     private void UpdateInventoryUI()
     {
         if (Inventory == null || SlotPrefab == null) return;
 
-        ClearInventoryUI();
+        ClearUI();
 
-        for (int i = 0; i < Inventory.Length; i++)
+        for (int i = 0; i < Capacity; i++)
         {
-            itemSlotList.Add(AddSlot(Inventory.GetSlot(i)));
+            var slotUI = Instantiate(SlotPrefab, Vector3.zero, Quaternion.identity, transform);
+            slotList.Add(slotUI);
+
+            if (i < Inventory.Length)
+                slotUI.Initialize(Inventory.GetSlot(i), this);
+            else
+                slotUI.InitializeEmpty(this);
         }
     }
 
-    private void ClearInventoryUI()
+    private void ClearUI()
     {
-        for (int i = 0; i < itemSlotList.Count; i++)
+        for (int i = 0; i < slotList.Count; i++)
         {
-            if (itemSlotList[i] != null) Destroy(itemSlotList[i]);
+            if (slotList[i] != null)
+                Destroy(slotList[i].gameObject);
         }
-        itemSlotList.Clear();
-    }
-
-    private GameObject AddSlot(ItemSlot itemSlot)
-    {
-        var element = Instantiate(SlotPrefab, Vector3.zero, Quaternion.identity, transform);
-        element.Initialize(itemSlot, this);
-        return element.gameObject;
+        slotList.Clear();
+        selectedSlot = null;
     }
 }

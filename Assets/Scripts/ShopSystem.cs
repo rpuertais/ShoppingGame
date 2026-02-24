@@ -39,11 +39,13 @@ public class ShopSystem : MonoBehaviour
 
         ItemData item = selection.SelectedItem;
         if (item == null) return;
+        if (playerWallet.Sell(item.Sell))
+        {
+            playerInventory.RemoveItem(item);
+            shopInventory.AddItem(item);
 
-        playerInventory.RemoveItem(item);
-        shopInventory.AddItem(item);
-
-        playerWallet.Add(item.Sell);
+            playerWallet.Add(item.Sell);
+        }
     }
 
     public void UseSelected()

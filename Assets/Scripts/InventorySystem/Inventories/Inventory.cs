@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Inventory", menuName = "Items/Inventory")]
 public class Inventory : ScriptableObject
 {
-    [SerializeField] private List<ItemSlot> Slots = new List<ItemSlot>();
+    [SerializeField] 
+    private List<ItemSlot> Slots = new List<ItemSlot>();
 
     public int Length => Slots.Count;
     public Action OnInventoryChange;

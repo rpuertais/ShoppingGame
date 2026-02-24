@@ -23,6 +23,9 @@ public class CoinsWallet : MonoBehaviour
     public void Add(int amount)
     {
         if (amount <= 0) return;
+        if (ShopCoins < amount) return;
+
+        
         PlayerCoins += amount;
         ShopCoins -= amount;
         RefreshUI();
@@ -32,10 +35,16 @@ public class CoinsWallet : MonoBehaviour
     {
         if (amount <= 0) return true;
         if (PlayerCoins < amount) return false;
-
+        
         PlayerCoins -= amount;
         ShopCoins += amount;
         RefreshUI();
+        return true;
+    }
+
+    public bool Sell(int amount)
+    {
+        if (ShopCoins < amount || ShopCoins == 0) return false;
         return true;
     }
 

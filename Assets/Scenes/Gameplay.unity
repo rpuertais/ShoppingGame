@@ -318,10 +318,10 @@ MonoBehaviour:
     m_Right: 10
     m_Top: 10
     m_Bottom: 10
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -380,8 +380,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.08187786, y: 0.13900001}
   m_AnchorMax: {x: 0.35954204, y: 0.8928278}
-  m_AnchoredPosition: {x: 942, y: 0.33291626}
-  m_SizeDelta: {x: -6.7647705, y: -0.6658325}
+  m_AnchoredPosition: {x: 926.15, y: 0.33291626}
+  m_SizeDelta: {x: -38.48, y: -0.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62576001
 MonoBehaviour:
@@ -398,6 +398,7 @@ MonoBehaviour:
   Inventory: {fileID: 11400000, guid: 74c4406b156001546b5a230736750883, type: 2}
   SlotPrefab: {fileID: 2167634714463090226, guid: aed715f5768a8a14dba79de4b0652c6d,
     type: 3}
+  Capacity: 28
   Owner: 1
   selectionManager: {fileID: 1869274314}
 --- !u!1 &115704967
@@ -3844,10 +3845,10 @@ MonoBehaviour:
     m_Right: 10
     m_Top: 10
     m_Bottom: 10
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 50, y: 50}
+  m_CellSize: {x: 100, y: 100}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -3906,8 +3907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6864428, y: 0.13900001}
   m_AnchorMax: {x: 0.95600003, y: 0.8928278}
-  m_AnchoredPosition: {x: -994.00006, y: -0.33291626}
-  m_SizeDelta: {x: 0.23522949, y: -0.6658325}
+  m_AnchoredPosition: {x: -1007.06036, y: -0.33291626}
+  m_SizeDelta: {x: -25.88, y: -0.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971635132
 MonoBehaviour:
@@ -3924,6 +3925,7 @@ MonoBehaviour:
   Inventory: {fileID: 11400000, guid: 385aa24aa079f004eb4d5817a369bc3e, type: 2}
   SlotPrefab: {fileID: 2167634714463090226, guid: aed715f5768a8a14dba79de4b0652c6d,
     type: 3}
+  Capacity: 28
   Owner: 0
   selectionManager: {fileID: 1869274314}
 --- !u!1 &2127330160
