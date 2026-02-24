@@ -10,8 +10,29 @@ public class CoinsWallet : MonoBehaviour
     public int ShopCoins = 100;
     public TextMeshProUGUI ShopCoinsText;
 
+    private int targetPlayerCoins;
+    private int targetShopCoins;
+
     private void Start()
     {
+        RefreshUI();
+    }
+
+    private void Update()
+    {
+        float speed = 10 * Time.deltaTime;
+
+        if (targetPlayerCoins < PlayerCoins && targetShopCoins > ShopCoins)
+        {
+            PlayerCoins -= Mathf.CeilToInt(speed);
+            ShopCoins += Mathf.CeilToInt(speed);
+        }
+        if (targetPlayerCoins > PlayerCoins && targetShopCoins < ShopCoins)
+        {
+            PlayerCoins += Mathf.CeilToInt(speed);
+            ShopCoins -= Mathf.CeilToInt(speed);
+        }
+
         RefreshUI();
     }
 
@@ -26,8 +47,8 @@ public class CoinsWallet : MonoBehaviour
         if (ShopCoins < amount) return;
 
         
-        PlayerCoins += amount;
-        ShopCoins -= amount;
+        targetPlayerCoins = PlayerCoins + amount;
+        targetShopCoins = ShopCoins - amount;
         RefreshUI();
     }
 
@@ -36,8 +57,8 @@ public class CoinsWallet : MonoBehaviour
         if (amount <= 0) return true;
         if (PlayerCoins < amount) return false;
         
-        PlayerCoins -= amount;
-        ShopCoins += amount;
+        targetPlayerCoins = PlayerCoins - amount;
+        targetShopCoins = ShopCoins + amount;
         RefreshUI();
         return true;
     }
