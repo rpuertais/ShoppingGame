@@ -243,9 +243,9 @@ MonoBehaviour:
   shopInventory: {fileID: 11400000, guid: 74c4406b156001546b5a230736750883, type: 2}
   playerStartItems:
   - item: {fileID: 11400000, guid: 90ec6691ba1e52b4db06f67468e7cf87, type: 2}
-    amount: 2
+    amount: 5
   - item: {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
-    amount: 1
+    amount: 6
   shopStartItems:
   - item: {fileID: 11400000, guid: 1239866f4ae598d43a0109cc45141a87, type: 2}
     amount: 1
