@@ -28,8 +28,14 @@ public class ItemUI : MonoBehaviour
 
     private void Start()
     {
-        if (Item != null) SetCard(Item);
-        else Clear();
+        if (Item != null)
+        {
+            SetCard(Item);
+        }
+        else
+        {
+            Clear();
+        }
     }
 
     public void SetCard(ItemData item)
@@ -45,67 +51,43 @@ public class ItemUI : MonoBehaviour
             Clear();
             return;
         }
+        TextName.text = Localizer.GetText(Item.NameKey);
+        TextDescription.text = Localizer.GetText(Item.DescriptionKey);
+        TextType.text = Localizer.GetText("GAME_TYPE") + ": " + Localizer.GetText(Item.Type.ToString());
+        TextCost.text = Localizer.GetText("GAME_BUY") + ": " + Item.Buy;
+        TextSell.text = Localizer.GetText("GAME_SELL") + ": " + Item.Sell;
 
-        if (TextName != null)
-            TextName.text = Localizer.GetText(Item.NameKey);
-
-        if (TextDescription != null)
-            TextDescription.text = Localizer.GetText(Item.DescriptionKey);
-
-        if (TextType != null)
-            TextType.text = Localizer.GetText("GAME_TYPE") + ": " + Localizer.GetText(Item.Type.ToString());
-
-        if (TextCost != null)
-            TextCost.text = Localizer.GetText("GAME_BUY") + ": " + Item.Buy;
-
-        if (TextSell != null)
-            TextSell.text = Localizer.GetText("GAME_SELL") + ": " + Item.Sell;
-
-        if (TextLifeRestore != null)
+        if (Item.IsConsumable)
         {
-            if (Item.IsConsumable)
-            {
-                TextLifeRestore.gameObject.SetActive(true);
-                TextLifeRestore.text = Localizer.GetText("GAME_LIFE_RESTORE") + ": " + Item.LifeRestore;
-            }
-            else
-            {
-                TextLifeRestore.gameObject.SetActive(false);
-                TextLifeRestore.text = "";
-            }
+            TextLifeRestore.gameObject.SetActive(true);
+            TextLifeRestore.text = Localizer.GetText("GAME_LIFE_RESTORE") + ": " + Item.LifeRestore;
+        }
+        else
+        {
+            TextLifeRestore.gameObject.SetActive(false);
+            TextLifeRestore.text = "";
         }
 
-        
-        if (Image != null)
-        {
-            Image.gameObject.SetActive(true);
-            Image.sprite = Item.Image;
-            Image.color = Color.white; 
-        }
+        Image.gameObject.SetActive(true);
+        Image.sprite = Item.Image;
+        Image.color = Color.white;
     }
 
     public void Clear()
     {
         Item = null;
 
-        if (TextName != null) TextName.text = "";
-        if (TextDescription != null) TextDescription.text = "";
+        TextName.text = "";
+        TextDescription.text = "";
 
-        if (TextType != null) TextType.text = "";
-        if (TextCost != null) TextCost.text = "";
-        if (TextSell != null) TextSell.text = "";
+        TextType.text = "";
+        TextCost.text = "";
+        TextSell.text = "";
 
-        if (TextLifeRestore != null)
-        {
-            TextLifeRestore.text = "";
-            TextLifeRestore.gameObject.SetActive(false);
-        }
+        TextLifeRestore.text = "";
+        TextLifeRestore.gameObject.SetActive(false);
 
-        
-        if (Image != null)
-        {
-            Image.sprite = null;
-            Image.gameObject.SetActive(false);
-        }
+        Image.sprite = null;
+        Image.gameObject.SetActive(false);
     }
 }

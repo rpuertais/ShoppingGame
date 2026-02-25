@@ -4,25 +4,28 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class DamageButton : MonoBehaviour
 {
-    public PlayerStats playerStats;
-    public int damageAmount = 10;
+    public PlayerStats PlayerStats;
+    public int DamageAmount = 10;
 
-    private Button btn;
+    private Button button;
 
     private void Awake()
     {
-        btn = GetComponent<Button>();
-        btn.onClick.AddListener(DoDamage);
+        button = GetComponent<Button>();
+        button.onClick.AddListener(DoDamage);
     }
 
     private void OnDestroy()
     {
-        btn.onClick.RemoveListener(DoDamage);
+        button.onClick.RemoveListener(DoDamage);
     }
 
     private void DoDamage()
     {
-        if (playerStats == null) return;
-        playerStats.Damage(damageAmount);
+        if (PlayerStats == null)
+        {
+            return;
+        }
+        PlayerStats.Damage(DamageAmount);
     }
 }

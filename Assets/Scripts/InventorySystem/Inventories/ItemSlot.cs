@@ -17,12 +17,15 @@ public class ItemSlot
 
     internal bool HasItem(ItemData item)
     {
-        return (item == Item);
+        return item == Item;
     }
 
     internal bool CanHold(ItemData item)
     {
-        if (item.IsStackable) return (item == Item);
+        if (item.IsStackable)
+        {
+            return item == Item;
+        }
 
         return false;
     }
@@ -39,6 +42,6 @@ public class ItemSlot
 
     public bool IsEmpty()
     {
-        return (Amount < 1);
+        return Amount < 1;
     }
 }

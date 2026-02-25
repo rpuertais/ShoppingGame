@@ -4,7 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Image))]
 public class HealthBarUI : MonoBehaviour
 {
-    public PlayerStats playerStats;
+    public PlayerStats PlayerStats;
     private Image barImage;
 
     private void Awake()
@@ -14,8 +14,10 @@ public class HealthBarUI : MonoBehaviour
 
     private void Update()
     {
-        if (playerStats == null) return;
-
-        barImage.fillAmount = playerStats.GetLifeNormalized();
+        if (PlayerStats == null)
+        {
+            return;
+        }
+        barImage.fillAmount = (float)PlayerStats.GetLife();
     }
 }

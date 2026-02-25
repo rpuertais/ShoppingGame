@@ -4,43 +4,67 @@ using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
     public int MaxLife = 100;
-    public int currentLife = 100;
+    public int CurrentLife = 100;
 
     private void Awake()
     {
-        if (currentLife < 0) currentLife = 0;
-        if (currentLife > MaxLife) currentLife = MaxLife;
+        if (CurrentLife < 0)
+        {
+            CurrentLife = 0;
+        }
+        if (CurrentLife > MaxLife)
+        {
+            CurrentLife = MaxLife;
+        }
     }
 
     private void Update()
     {
-        if (currentLife <= 0) SceneManager.LoadScene(2); ;
+        if (CurrentLife <= 0)
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void Damage(int amount)
     {
-        if (amount <= 0) return;
+        if (amount <= 0)
+        {
+            return;
+        }
 
-        currentLife -= amount;
-        if (currentLife < 0) currentLife = 0;
+        CurrentLife -= amount;
+        if (CurrentLife < 0)
+        {
+            CurrentLife = 0;
+        }
     }
 
     public void Heal(int amount)
     {
-        if (amount <= 0) return;
+        if (amount <= 0)
+        {
+            return;
+        }
 
-        currentLife += amount;
-        if (currentLife > MaxLife) currentLife = MaxLife;
+        CurrentLife += amount;
+        if (CurrentLife > MaxLife)
+        {
+            CurrentLife = MaxLife;
+        }
     }
 
     public bool IsFullLife()
     {
-        return currentLife >= MaxLife;
+        return CurrentLife >= MaxLife;
     }
 
-    public float GetLifeNormalized()
+    public int GetLife()
     {
-        if (MaxLife <= 0) return 0f;
-        return (float)currentLife / MaxLife;
+        if (MaxLife <= 0)
+        {
+            return 0;
+        }
+        return CurrentLife / MaxLife;
     }
 }

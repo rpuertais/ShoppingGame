@@ -47,7 +47,10 @@ public class Localizer : MonoBehaviour
 
     void AddLanguageData(string str)
     {
-        if (Data == null) Data = new Dictionary<string, LanguageData>();
+        if (Data == null)
+        {
+            Data = new Dictionary<string, LanguageData>();
+        }
 
         string[] entries = str.Split(';');
 

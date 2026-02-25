@@ -3,7 +3,7 @@ using TMPro;
 
 public class PlayerLifeText : MonoBehaviour
 {
-    public PlayerStats playerStats;
+    public PlayerStats PlayerStats;
     private TextMeshProUGUI lifeText;
 
     private void Awake()
@@ -13,6 +13,6 @@ public class PlayerLifeText : MonoBehaviour
 
     private void Update()
     {
-        lifeText.text = "" + playerStats.currentLife;
+        lifeText.text = "" + PlayerStats.CurrentLife;
     }
 }

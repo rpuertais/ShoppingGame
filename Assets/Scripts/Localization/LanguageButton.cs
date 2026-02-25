@@ -1,8 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 
 public class LanguageButton : MonoBehaviour, IPointerClickHandler
 {
@@ -19,7 +17,10 @@ public class LanguageButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Language += 1;
-        if (Language > Language.Spanish) Language = Language.English;
+        if (Language > Language.Spanish)
+        {
+            Language = Language.English;
+        }
 
         Localizer.SetLanguage(Language);
 

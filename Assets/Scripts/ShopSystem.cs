@@ -1,205 +1,118 @@
-/*using UnityEngine;
-
-public class ShopSystem : MonoBehaviour
-{
-    public Inventory playerInventory;
-    public Inventory shopInventory;
-
-    public CoinsWallet playerWallet;
-    public SelectionManager selection;
-
-    public PlayerStats playerStats;
-
-    public void BuySelected()
-    {
-        if (selection == null) return;
-        if (!selection.HasSelection()) return;
-        if (selection.SelectedFrom != InventoryOwner.Shop) return;
-
-        ItemData item = selection.SelectedItem;
-        if (item == null) return;
-
-        if (!playerWallet.CanAfford(item.Buy))
-        {
-            return;
-        }
-
-        if (playerWallet.Spend(item.Buy))
-        {
-            shopInventory.RemoveItem(item);
-            playerInventory.AddItem(item);
-        }
-    }
-
-    public void SellSelected()
-    {
-        if (selection == null) return;
-        if (!selection.HasSelection()) return;
-        if (selection.SelectedFrom != InventoryOwner.Player) return;
-
-        ItemData item = selection.SelectedItem;
-        if (item == null) return;
-        if (playerWallet.Sell(item.Sell))
-        {
-            playerInventory.RemoveItem(item);
-            shopInventory.AddItem(item);
-
-            playerWallet.Add(item.Sell);
-        }
-    }
-
-    public void UseSelected()
-    {
-        if (selection == null) return;
-        if (!selection.HasSelection()) return;
-        if (selection.SelectedFrom != InventoryOwner.Player) return;
-
-        ItemData item = selection.SelectedItem;
-        if (item == null) return;
-
-        if (!item.IsConsumable)
-        {
-            return;
-        }
-
-        if (playerStats != null)
-        {
-            playerStats.Heal(item.LifeRestore);
-        }
-
-        playerInventory.RemoveItem(item);
-    }
-}*/
-
 using UnityEngine;
 
 public class ShopSystem : MonoBehaviour
 {
-    public Inventory playerInventory;
-    public Inventory shopInventory;
+    public Inventory PlayerInventory;
+    public Inventory ShopInventory;
 
-    public CoinsWallet playerWallet;
-    public SelectionManager selection;
+    public CoinsWallet PlayerWallet;
+    public SelectionManager Selection;
 
-    public PlayerStats playerStats;
+    public PlayerStats PlayerStats;
 
-    [Header("Optional SFX")]
-    public AudioSource audioSource;
-    public AudioClip useSound;
+    [Header("Audio")]
+    public AudioSource AudioSource;
+    public AudioClip UseSound;
 
     public void BuySelected()
     {
-        if (selection == null) return;
-        if (!selection.HasSelection()) return;
-        if (selection.SelectedFrom != InventoryOwner.Shop) return;
+        if (Selection == null || PlayerInventory == null || ShopInventory == null || PlayerWallet == null)
+        {
+            return;
+        }
 
-        ItemData item = selection.SelectedItem;
-        if (item == null) return;
+        ItemData item = Selection.SelectedItem;
 
-        if (shopInventory == null) return;
-        if (!shopInventory.HasItem(item)) return;
+        if (Selection.HasSelection() && Selection.SelectedFrom == InventoryOwner.Shop && item != null && ShopInventory.HasItem(item) && PlayerWallet.CanAfford(item.Buy))
+        {
+            if (PlayerWallet.Spend(item.Buy))
+            {
+                ShopInventory.RemoveItem(item);
+                PlayerInventory.AddItem(item);
 
-        if (playerWallet == null) return;
-        if (!playerWallet.CanAfford(item.Buy)) return;
-
-        bool paid = playerWallet.Spend(item.Buy);
-        if (!paid) return;
-
-        shopInventory.RemoveItem(item);
-        playerInventory.AddItem(item);
-
-        
-        KeepOrClearAfterAction(item, InventoryOwner.Shop);
+                UpdateSelectionAfterAction(item, InventoryOwner.Shop);
+            }
+        }
     }
 
     public void SellSelected()
     {
-        if (selection == null) return;
-        if (!selection.HasSelection()) return;
-        if (selection.SelectedFrom != InventoryOwner.Player) return;
+        if (Selection == null || PlayerInventory == null || ShopInventory == null || PlayerWallet == null)
+        {
+            return;
+        }
 
-        ItemData item = selection.SelectedItem;
-        if (item == null) return;
+        ItemData item = Selection.SelectedItem;
 
-        if (playerInventory == null) return;
-        if (!playerInventory.HasItem(item)) return;
+        if (Selection.HasSelection() && Selection.SelectedFrom == InventoryOwner.Player && item != null && PlayerInventory.HasItem(item) && PlayerWallet.Sell(item.Sell))
+        {
+            PlayerWallet.Add(item.Sell);
 
-        if (playerWallet == null) return;
-        if (!playerWallet.Sell(item.Sell)) return;
+            PlayerInventory.RemoveItem(item);
+            ShopInventory.AddItem(item);
 
-        playerWallet.Add(item.Sell);
-
-        playerInventory.RemoveItem(item);
-        shopInventory.AddItem(item);
-
-        
-        KeepOrClearAfterAction(item, InventoryOwner.Player);
+            UpdateSelectionAfterAction(item, InventoryOwner.Player);
+        }
     }
 
     public void UseSelected()
     {
-        if (selection == null) return;
-        if (!selection.HasSelection()) return;
-        if (selection.SelectedFrom != InventoryOwner.Player) return;
+        if (Selection == null || PlayerInventory == null || PlayerStats == null)
+        {
+            return;
+        }
 
-        ItemData item = selection.SelectedItem;
-        if (item == null) return;
+        ItemData item = Selection.SelectedItem;
 
-        if (playerInventory == null) return;
-        if (!playerInventory.HasItem(item)) return;
+        if (Selection.HasSelection() && Selection.SelectedFrom == InventoryOwner.Player && item != null && item.IsConsumable && PlayerInventory.HasItem(item) && !PlayerStats.IsFullLife())
+        {
+            PlayerStats.Heal(item.LifeRestore);
+            PlayerInventory.RemoveItem(item);
 
-        if (!item.IsConsumable) return;
+            PlayUseSound();
 
-        if (playerStats == null) return;
-        if (playerStats.IsFullLife()) return; 
-
-        playerStats.Heal(item.LifeRestore);
-        playerInventory.RemoveItem(item);
-
-        
-        PlayUseSound();
-
-        
-        KeepOrClearAfterAction(item, InventoryOwner.Player);
+            UpdateSelectionAfterAction(item, InventoryOwner.Player);
+        }
     }
 
-    private void KeepOrClearAfterAction(ItemData item, InventoryOwner from)
+    private void UpdateSelectionAfterAction(ItemData item, InventoryOwner from)
     {
-        if (selection == null) return;
+        if (Selection == null)
+        {
+            return;
+        }
 
-        bool keep = false;
+        bool keepSelection = false;
 
         if (item != null && item.IsStackable)
         {
             if (from == InventoryOwner.Player)
             {
-                if (playerInventory != null && playerInventory.HasItem(item)) keep = true;
+                if (PlayerInventory != null && PlayerInventory.HasItem(item))
+                {
+                    keepSelection = true;
+                }
             }
             else
             {
-                if (shopInventory != null && shopInventory.HasItem(item)) keep = true;
+                if (ShopInventory != null && ShopInventory.HasItem(item))
+                {
+                    keepSelection = true;
+                }
             }
         }
 
-        if (keep)
+        if (!keepSelection)
         {
-            
-            if (from == selection.SelectedFrom)
-            {
-               
-            }
-        }
-        else
-        {
-            selection.ClearSelection();
+            Selection.ClearSelection();
         }
     }
 
     private void PlayUseSound()
     {
-        if (audioSource == null) return;
-        if (useSound == null) return;
-
-        audioSource.PlayOneShot(useSound);
+        if (AudioSource != null && UseSound != null)
+        {
+            AudioSource.PlayOneShot(UseSound);
+        }
     }
 }

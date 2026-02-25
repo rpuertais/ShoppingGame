@@ -14,7 +14,7 @@ public class ItemData : ScriptableObject
     public string NameKey;
     public string DescriptionKey;
 
-    [Header("Details")]
+    [Header("Type")]
     public ItemType Type;
 
     [Header("Stack / Use")]

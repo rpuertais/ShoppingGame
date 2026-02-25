@@ -1,52 +1,3 @@
-/*using UnityEngine;
-
-public enum InventoryOwner
-{
-    Player,
-    Shop
-}
-public class SelectionManager : MonoBehaviour
-{
-    public ItemUI selectedItemUI;
-
-    [Header("Sound")]
-    public AudioSource audioSource;
-    public AudioClip clickSound;
-
-    public ItemData SelectedItem { get; private set; }
-    public InventoryOwner SelectedFrom { get; private set; }
-
-    public bool HasSelection()
-    {
-        return SelectedItem != null;
-    }
-
-    public void Select(ItemData item, InventoryOwner from)
-    {
-        SelectedItem = item;
-        SelectedFrom = from;
-
-        if (selectedItemUI != null)
-            selectedItemUI.SetCard(item);
-
-        PlayClickSound();
-    }
-
-    public void ClearSelection()
-    {
-        SelectedItem = null;
-
-        if (selectedItemUI != null)
-            selectedItemUI.Clear();
-    }
-
-    private void PlayClickSound()
-    {
-        if (audioSource == null || clickSound == null) return;
-        audioSource.PlayOneShot(clickSound);
-    }
-}*/
-
 using UnityEngine;
 
 public enum InventoryOwner
@@ -57,11 +8,11 @@ public enum InventoryOwner
 
 public class SelectionManager : MonoBehaviour
 {
-    public ItemUI selectedItemUI;
+    public ItemUI SelectedItemUI;
 
     [Header("Click Sound")]
-    public AudioSource audioSource;
-    public AudioClip clickSound;
+    public AudioSource AudioSource;
+    public AudioClip ClickSound;
 
     public ItemData SelectedItem { get; private set; }
     public InventoryOwner SelectedFrom { get; private set; }
@@ -85,9 +36,9 @@ public class SelectionManager : MonoBehaviour
         SelectedItem = item;
         SelectedFrom = from;
 
-        if (selectedItemUI != null)
+        if (SelectedItemUI != null)
         {
-            selectedItemUI.SetCard(item);
+            SelectedItemUI.SetCard(item);
         }
 
         if (playSound)
@@ -100,9 +51,9 @@ public class SelectionManager : MonoBehaviour
     {
         SelectedItem = null;
 
-        if (selectedItemUI != null)
+        if (SelectedItemUI != null)
         {
-            selectedItemUI.Clear();
+            SelectedItemUI.Clear();
         }
 
         if (lastInventoryUI != null)
@@ -114,9 +65,15 @@ public class SelectionManager : MonoBehaviour
 
     private void PlayClickSound()
     {
-        if (audioSource == null) return;
-        if (clickSound == null) return;
+        if (AudioSource == null)
+        {
+            return; 
+        }
 
-        audioSource.PlayOneShot(clickSound);
+        if (ClickSound == null) 
+        {
+            return;
+        }
+        AudioSource.PlayOneShot(ClickSound);
     }
 }

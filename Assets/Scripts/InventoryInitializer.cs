@@ -1,50 +1,56 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InventoryInitializer : MonoBehaviour
 {
-    [System.Serializable]
-    public class StartItem
+    public Inventory PlayerInventory;
+    public Inventory ShopInventory;
+
+    [Header("Player start items")]
+    public ItemData[] PlayerItems;
+    public int[] PlayerAmounts;
+
+    [Header("Shop start items")]
+    public ItemData[] ShopItems;
+    public int[] ShopAmounts;
+
+    public bool ClearInventoriesOnStart = true;
+
+    private void Start()
     {
-        public ItemData item;
-        public int amount = 1;
+        if (ClearInventoriesOnStart)
+        {
+            if (PlayerInventory != null)
+            {
+                PlayerInventory.Clear();
+            }
+            if (ShopInventory != null)
+            {
+                ShopInventory.Clear();
+            }
+        }
+
+        InitInventory(PlayerInventory, PlayerItems, PlayerAmounts);
+        InitInventory(ShopInventory, ShopItems, ShopAmounts);
     }
 
-    public Inventory playerInventory;
-    public Inventory shopInventory;
-
-    [Header("Start Items")]
-    public List<StartItem> playerStartItems = new List<StartItem>();
-    public List<StartItem> shopStartItems = new List<StartItem>();
-
-    [Header("Reset each Play")]
-    public bool clearInventoriesOnStart = true;
-
-    private void Awake()
+    private void InitInventory(Inventory inventory, ItemData[] items, int[] amounts)
     {
-        if (playerInventory == null || shopInventory == null)
+        if (inventory == null || items == null || amounts == null)
         {
-            Debug.LogError("InventoryInitializer: falta assignar playerInventory o shopInventory.");
             return;
         }
 
-        if (clearInventoriesOnStart)
+        int count = items.Length;
+        if (amounts.Length < count)
         {
-            playerInventory.Clear();
-            shopInventory.Clear();
+            count = amounts.Length;
         }
 
-        AddList(playerInventory, playerStartItems);
-        AddList(shopInventory, shopStartItems);
-    }
-
-    private void AddList(Inventory inv, List<StartItem> list)
-    {
-        for (int i = 0; i < list.Count; i++)
+        for (int i = 0; i < count; i++)
         {
-            if (list[i].item != null)
+            if (items[i] != null && amounts[i] > 0)
             {
-                inv.AddItem(list[i].item, list[i].amount);
+                inventory.AddItem(items[i], amounts[i]);
             }
         }
     }

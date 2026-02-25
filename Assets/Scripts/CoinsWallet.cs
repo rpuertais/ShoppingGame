@@ -43,10 +43,15 @@ public class CoinsWallet : MonoBehaviour
 
     public void Add(int amount)
     {
-        if (amount <= 0) return;
-        if (ShopCoins < amount) return;
+        if (amount <= 0)
+        {
+            return;
+        }
+        if (ShopCoins < amount)
+        {
+            return;
+        }
 
-        
         targetPlayerCoins = PlayerCoins + amount;
         targetShopCoins = ShopCoins - amount;
         RefreshUI();
@@ -54,8 +59,14 @@ public class CoinsWallet : MonoBehaviour
 
     public bool Spend(int amount)
     {
-        if (amount <= 0) return true;
-        if (PlayerCoins < amount) return false;
+        if (amount <= 0)
+        {
+            return true;
+        }
+        if (PlayerCoins < amount)
+        {
+            return false;
+        }
         
         targetPlayerCoins = PlayerCoins - amount;
         targetShopCoins = ShopCoins + amount;
@@ -65,7 +76,10 @@ public class CoinsWallet : MonoBehaviour
 
     public bool Sell(int amount)
     {
-        if (ShopCoins < amount || ShopCoins == 0) return false;
+        if (ShopCoins < amount || ShopCoins == 0)
+        {
+            return false;
+        }
         return true;
     }
 

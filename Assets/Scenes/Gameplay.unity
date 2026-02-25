@@ -239,33 +239,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ff7b851d23e7e45a7c9cc408f0ac3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryInitializer
-  playerInventory: {fileID: 11400000, guid: 385aa24aa079f004eb4d5817a369bc3e, type: 2}
-  shopInventory: {fileID: 11400000, guid: 74c4406b156001546b5a230736750883, type: 2}
-  playerStartItems:
-  - item: {fileID: 11400000, guid: 90ec6691ba1e52b4db06f67468e7cf87, type: 2}
-    amount: 5
-  - item: {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
-    amount: 6
-  shopStartItems:
-  - item: {fileID: 11400000, guid: 1239866f4ae598d43a0109cc45141a87, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: b0ca555b30f67cf4d9b8352cb3dd9b79, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 90ec6691ba1e52b4db06f67468e7cf87, type: 2}
-    amount: 3
-  - item: {fileID: 11400000, guid: 0d51c53234f96ff479bade58ca93b2cf, type: 2}
-    amount: 5
-  - item: {fileID: 11400000, guid: 06b50024f6273684d98559c1df3e6ebb, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: a422dcde80c272345b73426721077334, type: 2}
-    amount: 6
-  - item: {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: efe0b827949baaa45b8b886176496354, type: 2}
-    amount: 1
-  - item: {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
-    amount: 1
-  clearInventoriesOnStart: 1
+  PlayerInventory: {fileID: 11400000, guid: 385aa24aa079f004eb4d5817a369bc3e, type: 2}
+  ShopInventory: {fileID: 11400000, guid: 74c4406b156001546b5a230736750883, type: 2}
+  PlayerItems:
+  - {fileID: 11400000, guid: 7c164c9deed963844aaa3f3a43316171, type: 2}
+  - {fileID: 11400000, guid: 90ec6691ba1e52b4db06f67468e7cf87, type: 2}
+  - {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
+  PlayerAmounts: 020000000500000003000000
+  ShopItems:
+  - {fileID: 11400000, guid: 7c164c9deed963844aaa3f3a43316171, type: 2}
+  - {fileID: 11400000, guid: 1239866f4ae598d43a0109cc45141a87, type: 2}
+  - {fileID: 11400000, guid: b0ca555b30f67cf4d9b8352cb3dd9b79, type: 2}
+  - {fileID: 11400000, guid: 90ec6691ba1e52b4db06f67468e7cf87, type: 2}
+  - {fileID: 11400000, guid: 0d51c53234f96ff479bade58ca93b2cf, type: 2}
+  - {fileID: 11400000, guid: 06b50024f6273684d98559c1df3e6ebb, type: 2}
+  - {fileID: 11400000, guid: a422dcde80c272345b73426721077334, type: 2}
+  - {fileID: 11400000, guid: 5ac21ebc7e9d1384e805cc416bccd4a8, type: 2}
+  - {fileID: 11400000, guid: efe0b827949baaa45b8b886176496354, type: 2}
+  ShopAmounts: 020000000300000002000000060000000400000004000000080000000200000005000000
+  ClearInventoriesOnStart: 1
 --- !u!4 &47023147
 Transform:
   m_ObjectHideFlags: 0
@@ -400,7 +392,7 @@ MonoBehaviour:
     type: 3}
   Capacity: 28
   Owner: 1
-  selectionManager: {fileID: 1869274314}
+  SelectionManager: {fileID: 1869274314}
 --- !u!1 &115704967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1203,7 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d398783287f182b4db73fbea7c1a6873, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerLifeText
-  playerStats: {fileID: 487819564}
+  PlayerStats: {fileID: 487819564}
 --- !u!1 &262267919
 GameObject:
   m_ObjectHideFlags: 0
@@ -1326,7 +1318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae936069ac513b4899786fc5ebbb564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
-  playerStats: {fileID: 487819564}
+  PlayerStats: {fileID: 487819564}
 --- !u!1 &291485584
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,8 +1731,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d75db2675e60641974909d73a9eec9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageButton
-  playerStats: {fileID: 487819564}
-  damageAmount: 10
+  PlayerStats: {fileID: 487819564}
+  DamageAmount: 10
 --- !u!1 &413188126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,7 +1915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
   MaxLife: 100
-  currentLife: 100
+  CurrentLife: 100
 --- !u!4 &487819565
 Transform:
   m_ObjectHideFlags: 0
@@ -2213,13 +2205,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aefc58e984eb8ab43b6dc3284d4805f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopSystem
-  playerInventory: {fileID: 11400000, guid: 385aa24aa079f004eb4d5817a369bc3e, type: 2}
-  shopInventory: {fileID: 11400000, guid: 74c4406b156001546b5a230736750883, type: 2}
-  playerWallet: {fileID: 487819567}
-  selection: {fileID: 1869274314}
-  playerStats: {fileID: 487819564}
-  audioSource: {fileID: 1034341794}
-  useSound: {fileID: 8300000, guid: 005cfa0707025ba4a9cb0a559904feb2, type: 3}
+  PlayerInventory: {fileID: 11400000, guid: 385aa24aa079f004eb4d5817a369bc3e, type: 2}
+  ShopInventory: {fileID: 11400000, guid: 74c4406b156001546b5a230736750883, type: 2}
+  PlayerWallet: {fileID: 487819567}
+  Selection: {fileID: 1869274314}
+  PlayerStats: {fileID: 487819564}
+  AudioSource: {fileID: 1034341794}
+  UseSound: {fileID: 8300000, guid: 005cfa0707025ba4a9cb0a559904feb2, type: 3}
 --- !u!4 &751123816
 Transform:
   m_ObjectHideFlags: 0
@@ -3349,37 +3341,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182170543}
   m_CullTransparentMesh: 0
---- !u!1 &1265633069
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1265633070}
-  m_Layer: 0
-  m_Name: Items
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1265633070
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1265633069}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -160.25471, y: 20.673359, z: -9719.999}
-  m_LocalScale: {x: 108, y: 108, z: 108}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1546767115}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1396346616
 GameObject:
   m_ObjectHideFlags: 0
@@ -3887,7 +3848,6 @@ RectTransform:
   - {fileID: 240091019}
   - {fileID: 1895851458}
   - {fileID: 378483048}
-  - {fileID: 1265633070}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4569,9 +4529,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6a953891149464e97f4bcd0954bb1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SelectionManager
-  selectedItemUI: {fileID: 115704968}
-  audioSource: {fileID: 291485586}
-  clickSound: {fileID: 8300000, guid: 1ee55000d1594344c96347fd9d781093, type: 3}
+  SelectedItemUI: {fileID: 115704968}
+  AudioSource: {fileID: 291485586}
+  ClickSound: {fileID: 8300000, guid: 1ee55000d1594344c96347fd9d781093, type: 3}
 --- !u!4 &1869274315
 Transform:
   m_ObjectHideFlags: 0
@@ -4920,7 +4880,7 @@ MonoBehaviour:
     type: 3}
   Capacity: 28
   Owner: 0
-  selectionManager: {fileID: 1869274314}
+  SelectionManager: {fileID: 1869274314}
 --- !u!1 &2127330160
 GameObject:
   m_ObjectHideFlags: 0
