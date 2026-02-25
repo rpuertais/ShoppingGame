@@ -59,12 +59,12 @@ public class PlayerStats : MonoBehaviour
         return CurrentLife >= MaxLife;
     }
 
-    public int GetLife()
+    public float GetLife()
     {
         if (MaxLife <= 0)
         {
-            return 0;
+            return 0f;
         }
-        return CurrentLife / MaxLife;
+        return (float)CurrentLife / MaxLife;
     }
 }

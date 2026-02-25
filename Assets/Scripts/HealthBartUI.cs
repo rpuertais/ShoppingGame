@@ -18,6 +18,6 @@ public class HealthBarUI : MonoBehaviour
         {
             return;
         }
-        barImage.fillAmount = (float)PlayerStats.GetLife();
+        barImage.fillAmount = PlayerStats.GetLife();
     }
 }
