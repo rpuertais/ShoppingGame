@@ -1,7 +1,6 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 public class ItemUI : MonoBehaviour
 {
@@ -17,13 +16,14 @@ public class ItemUI : MonoBehaviour
 
     public Image Image;
 
-    private void OnEnable() 
-    { 
-        Localizer.OnLanguageChange += RefreshLanguage; 
+    private void OnEnable()
+    {
+        Localizer.OnLanguageChange += RefreshLanguage;
     }
-    private void OnDisable() 
-    { 
-        Localizer.OnLanguageChange -= RefreshLanguage; 
+
+    private void OnDisable()
+    {
+        Localizer.OnLanguageChange -= RefreshLanguage;
     }
 
     private void Start()
@@ -34,7 +34,7 @@ public class ItemUI : MonoBehaviour
 
     public void SetCard(ItemData item)
     {
-        Item = item; 
+        Item = item;
         RefreshLanguage();
     }
 
@@ -53,31 +53,37 @@ public class ItemUI : MonoBehaviour
             TextDescription.text = Localizer.GetText(Item.DescriptionKey);
 
         if (TextType != null)
-            TextType.text = $"{Localizer.GetText("GAME_TYPE")}: {Localizer.GetText(Item.Type.ToString())}";
+            TextType.text = Localizer.GetText("GAME_TYPE") + ": " + Localizer.GetText(Item.Type.ToString());
 
         if (TextCost != null)
-            TextCost.text = $"{Localizer.GetText("GAME_BUY")}: {Item.Buy}";
+            TextCost.text = Localizer.GetText("GAME_BUY") + ": " + Item.Buy;
 
         if (TextSell != null)
-            TextSell.text = $"{Localizer.GetText("GAME_SELL")}: {Item.Sell}";
+            TextSell.text = Localizer.GetText("GAME_SELL") + ": " + Item.Sell;
 
         if (TextLifeRestore != null)
         {
             if (Item.IsConsumable)
             {
                 TextLifeRestore.gameObject.SetActive(true);
-                TextLifeRestore.text =
-                    $"{Localizer.GetText("GAME_LIFE_RESTORE")}: {Item.LifeRestore}";
+                TextLifeRestore.text = Localizer.GetText("GAME_LIFE_RESTORE") + ": " + Item.LifeRestore;
             }
             else
             {
                 TextLifeRestore.gameObject.SetActive(false);
+                TextLifeRestore.text = "";
             }
         }
 
+        
         if (Image != null)
+        {
+            Image.gameObject.SetActive(true);
             Image.sprite = Item.Image;
+            Image.color = Color.white; 
+        }
     }
+
     public void Clear()
     {
         Item = null;
@@ -95,6 +101,11 @@ public class ItemUI : MonoBehaviour
             TextLifeRestore.gameObject.SetActive(false);
         }
 
-        if (Image != null) Image.sprite = null;
+        
+        if (Image != null)
+        {
+            Image.sprite = null;
+            Image.gameObject.SetActive(false);
+        }
     }
 }
